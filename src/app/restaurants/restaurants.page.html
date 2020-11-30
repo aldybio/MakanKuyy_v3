@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <!-- <ion-searchbar aria-placeholder="Search..."></ion-searchbar> -->
+    <!-- <ion-row>
+      <ion-searchbar style="width: 40%; margin-top: 2%;" aria-placeholder="Search by id..."></ion-searchbar>
+      <span style="margin-top: 2%;"><ion-button color="dark" >Edit Trivia</ion-button></span>
+    </ion-row> -->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-title style="margin-top: 2%;">All Restaurants</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding grid" [ngClass]="state ? '' : 'show'" #gridview color="primary">
+  <div style="width: 100%">
+    <ion-searchbar aria-placeholder="Search a restaurant..."></ion-searchbar>
+  </div>
+
+  <div>
+    <p>Most Popular Restaurants</p>
+  </div>
+  <!-- <ion-grid>
+    <ion-row class="resto-popular">
+      <ion-col size="6" size-md="4" *ngFor="let restaurant of restaurants" class="item">
+        <ion-card [routerLink]="['./', restaurant.id]">
+            <ion-item>
+              <ion-avatar style="block-size: 120px; width:120px; margin: auto;">
+                <ion-img [src]="restaurant.imageUrl"></ion-img>
+              </ion-avatar>
+            </ion-item>
+          <ion-card-content class="resto-caption">
+            <ion-card-title class="ion-text-center">{{ restaurant.name }}</ion-card-title>
+            <h3 class="ion-text-center">{{ restaurant.name }}</h3>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <div class="thumnails">
+    <div class="list-thumbnail">
+      <div class="img-thumb" [class.selected-img]="x.selected" *ngFor="let x of restaurants">
+        <ion-card [routerLink]="['./', x.id]">
+          <ion-item>
+            <ion-avatar style="block-size: 120px; width:120px; margin: auto;">
+              <ion-img [src]="x.imageUrl"></ion-img>
+            </ion-avatar>
+          </ion-item>
+          <ion-card-content class="resto-caption">
+            <h3 class="ion-text-center">{{ x.name }}</h3>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <p>Nearby Restaurants</p>
+  </div>
+
+  <!-- <ion-grid>
+    <ion-row class="resto-popular">
+      <ion-col size="6" size-md="4" *ngFor="let restaurant of restaurants" class="item">
+        <ion-card [routerLink]="['./', restaurant.id]">
+            <ion-item>
+              <ion-avatar style="block-size: 120px; width:120px; margin: auto;">
+                <ion-img [src]="restaurant.imageUrl"></ion-img>
+              </ion-avatar>
+            </ion-item>
+          <ion-card-content class="resto-caption">
+            <h3 class="ion-text-center">{{ restaurant.name }}</h3>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <div class="thumnails">
+    <div class="list-thumbnail">
+      <div class="img-thumb" [class.selected-img]="x.selected" *ngFor="let x of restaurants">
+        <ion-card [routerLink]="['./', x.id]">
+          <ion-item>
+            <ion-avatar style="block-size: 120px; width:120px; margin: auto;">
+              <ion-img [src]="x.imageUrl"></ion-img>
+            </ion-avatar>
+          </ion-item>
+          <ion-card-content class="resto-caption">
+            <h3 class="ion-text-center">{{ x.name }}</h3>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="thumnails">
+    <div class="list-thumbnail">
+      <div class="img-thumb" [class.selected-img]="x.selected" *ngFor="let x of restaurants">
+        <img [src]="x.imageUrl">
+        <small>{{x.name}}</small>
+      </div>
+    </div>
+  </div> -->
+
+  <ion-row>
+    <div style="width: 80%; margin: 15px auto; ">
+      <ion-button>Check Out Interesting</ion-button>
+      <ion-button class="trivia-btn" color="secondary" routerLink="/trivia">Trivias!</ion-button>
+    </div>
+  </ion-row>
+</ion-content>

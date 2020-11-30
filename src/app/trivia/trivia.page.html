@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Trivia</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <ion-slides>
+    <ion-slide *ngFor="let trivia of trivias" class="item">
+      <ion-row style="width: 80%; margin: 0 auto;">
+        <ion-card color="tertiary" style="width: 100%; padding: 20px 0">
+          <ion-card-content>
+            <ion-text class="ion-text-center trivia-content" color="secondary">
+              {{ trivia.content }}
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+        <ion-card color="tertiary" style="width: 100%; margin-top: 20px">
+          <ion-card-content>
+            <ion-text class="ion-text-center trivia-source" color="secondary">
+              Source: {{ trivia.source }}
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
